@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosso Amor - Juliana & Gabriela</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f2;
+      color: #333;
+    }
+    header {
+      background-color: #f9d5c2;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .date-section {
+      margin-bottom: 60px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .date-section img {
+      width: 100%;
+      border-radius: 16px;
+      margin-top: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .date-section h2 {
+      font-size: 1.8em;
+      color: #c97b5b;
+    }
+    .date-section p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+    footer {
+      background-color: #f0c5b3;
+      text-align: center;
+      padding: 25px;
+      font-size: 1.1em;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    #lockscreen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #fff8f2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    #lockscreen input {
+      padding: 10px;
+      font-size: 1.2em;
+      margin-top: 10px;
+      border: 2px solid #f9d5c2;
+      border-radius: 8px;
+      text-align: center;
+    }
+    #lockscreen button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #f9d5c2;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    #lockscreen p {
+      font-size: 1.2em;
+      color: #c97b5b;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="lockscreen">
+    <p>🌸 Insira o dia em que a gente se conheceu (formato: dd/mm):</p>
+    <input type="password" id="password" placeholder="Ex: 28/06">
+    <button onclick="checkPassword()">Entrar</button>
+  </div>
+
+  <header>
+    <h1>Nosso Amor em Cenas</h1>
+    <p>Por Juliana para Gabriela — com todo amor do mundo 💖</p>
+  </header>
+
+  <div class="container" id="mainContent" style="display: none;">
+    <div class="date-section">
+      <h2>28/06 - Nosso Primeiro Encontro 🍻</h2>
+      <p>Nos conhecemos num barzinho com sinuca. A vibe bateu tão forte que, no fim da noite, ela me convidou pra dormir com ela. Assistimos filmes, trocamos carinhos e no outro dia, enquanto ela cozinhava pra nós, eu arrumei a torneira dela. E adivinha? Ela amou.</p>
+      <img src="Ghibli_Cena1.jpg" alt="Arrumando a torneira com amor">
+    </div>
+
+    <div class="date-section">
+      <h2>05/07 - Churrasco com Tomatinhos 🌿</h2>
+      <p>Nosso primeiro churrasco juntas no quiosque do condomínio. Ela fez o fogo, eu assei a carne e depois preparei um carreteiro que ela jurou ser o melhor da vida! E o mais especial: ela deixou eu usar os tomatinhos cereja que ela cultivou por meses.</p>
+      <img src="Ghibli_Cena2.jpg" alt="Churrasco e carinho com tomatinhos">
+    </div>
+
+    <div class="date-section">
+      <h2>12/07 - Fogueira e Vista do Morro 🌄</h2>
+      <p>Nossa primeira trilha no Morro Santana. Tentamos (por horas!) acender uma fogueira com itens naturais, e conseguimos! O pôr do sol iluminando a cidade lá do alto foi inesquecível. No dia seguinte, cerveja no parque e sorrisos largos.</p>
+      <img src="Ghibli_Cena3.jpg" alt="Fogueira no pôr do sol">
+      <img src="Ghibli_Cena4.jpg" alt="Passeio no parque com cerveja e amor">
+    </div>
+  </div>
+
+  <footer id="mainFooter" style="display: none;">
+    Gabriela, cada um desses momentos é um capítulo da nossa história. Mal posso esperar pelos próximos. Te amo! 💘
+  </footer>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('password').value.trim();
+      const correct = "28/06";
+
+      if (input === correct) {
+        document.getElementById('lockscreen').style.display = "none";
+        document.getElementById('mainContent').style.display = "block";
+        document.getElementById('mainFooter').style.display = "block";
+      } else {
+        alert("Hmm... parece que essa não é a data certa 🧐");
+      }
+    }
+  </script>
+</body>
+</html>
