@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosso Amor - Juliana & Gabriela</title>
   <style>
+   
+  #contador {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 30px;
+    font-family: sans-serif;
+  }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -112,6 +120,8 @@
       width: 200px;
       outline: none;
     }
+    <h2>Tempo desde: 1º de janeiro de 2020</h2>
+<div id="contador"></div>
   </style>
 </head>
 <body>
@@ -172,5 +182,36 @@
       }
     }
   </script>
+  <script>
+  const dataInicio = new Date("2020-01-01T00:00:00");
+
+  function atualizarContador() {
+    const agora = new Date();
+    let anos = agora.getFullYear() - dataInicio.getFullYear();
+    let meses = agora.getMonth() - dataInicio.getMonth();
+    let dias = agora.getDate() - dataInicio.getDate();
+    let horas = agora.getHours() - dataInicio.getHours();
+    let minutos = agora.getMinutes() - dataInicio.getMinutes();
+    let segundos = agora.getSeconds() - dataInicio.getSeconds();
+
+    if (segundos < 0) { segundos += 60; minutos--; }
+    if (minutos < 0) { minutos += 60; horas--; }
+    if (horas < 0) { horas += 24; dias--; }
+    if (dias < 0) {
+      const mesAnterior = new Date(agora.getFullYear(), agora.getMonth(), 0);
+      dias += mesAnterior.getDate();
+      meses--;
+    }
+    if (meses < 0) { meses += 12; anos--; }
+
+    document.getElementById("contador").textContent =
+      `${anos} anos, ${meses} meses, ${dias} dias, ` +
+      `${horas}h ${minutos}min ${segundos}s`;
+  }
+
+  setInterval(atualizarContador, 1000);
+  atualizarContador();
+</script>
+
 </body>
 </html>
