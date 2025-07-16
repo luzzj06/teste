@@ -10,6 +10,7 @@
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #fff8f2;
+      padding-top: 60px; /* espaço pro player */
       color: #333;
     }
     header {
@@ -86,10 +87,41 @@
       font-size: 1.2em;
       color: #c97b5b;
     }
+    
+    .audio-bar {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #f8d8d7;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      z-index: 1000;
+    }
+
+    .audio-bar span {
+      margin-right: 10px;
+      font-size: 14px;
+      color: #6b4c4c;
+    }
+
+    .audio-bar audio {
+      width: 200px;
+      outline: none;
+    }
   </style>
 </head>
 <body>
-
+<div class="audio-bar">
+    <span>♡ now playing:</span>
+    <audio controls>
+      <source src="musica.mp3" type="audio/mpeg">
+      Seu navegador não suporta áudio.
+    </audio>
+  </div>
   <div id="lockscreen">
     <p>🌸 Insira o dia em que a gente se conheceu (formato: dd/mm):</p>
     <input type="password" id="password" placeholder="Ex: 12/01">
